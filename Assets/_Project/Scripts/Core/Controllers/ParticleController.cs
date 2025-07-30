@@ -8,11 +8,14 @@ namespace _Project.Scripts.Core.Controllers
     {
         private ParticleSystem[] _particleSystems;
         
+        private readonly Transform _paretTransform;
         private readonly ParticleConfig _particleConfig;
 
-        public ParticleController(ParticleConfig particleConfig)
+        public ParticleController(ParticleConfig particleConfig, 
+            Transform paretTransform)
         {
             _particleConfig = particleConfig;
+            _paretTransform = paretTransform;
         }
         
         public void Initialize()
@@ -26,7 +29,7 @@ namespace _Project.Scripts.Core.Controllers
 
             for (int i = 0; i < _particleConfig.ParticleCount; i++)
             {
-                _particleSystems[i] = Object.Instantiate(_particleConfig.ParticleSystem);
+                _particleSystems[i] = Object.Instantiate(_particleConfig.ParticleSystem, _paretTransform);
                 _particleSystems[i].gameObject.SetActive(false);
             }
         }
