@@ -44,11 +44,13 @@ namespace _Project.Scripts.Core.Presenters
         private void LoadStartScene()
         {
             _sceneManagementService.LoadScene(_sceneNumbersConfig.StartScene);
+            _scoreModel.ClearScore();
         }
 
         private void LoadPlayScene()
         {
             _sceneManagementService.LoadScene(_sceneNumbersConfig.PlayScene);
+            _scoreModel.ClearScore();
         }
     }
 }

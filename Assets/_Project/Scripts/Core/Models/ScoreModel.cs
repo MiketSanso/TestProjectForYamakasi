@@ -8,5 +8,10 @@ namespace _Project.Scripts.Core.Models
         {
             Score += score;
         }
+
+        public void ClearScore()
+        {
+            Score = 0;
+        }
     }
 }
