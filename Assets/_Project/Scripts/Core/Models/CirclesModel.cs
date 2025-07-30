@@ -26,7 +26,7 @@ namespace _Project.Scripts.Core.Models
             {
                 for (int y = 0; y < 2; y++)
                 {
-                    if (_circles[x, y] == touchedCircle)
+                    if (_circles[x, y] != null && _circles[x, y].ID == touchedCircle.ID)
                     {
                         _circles[x, y + 1] = addCircle;
                         CheckCircles();
@@ -62,7 +62,7 @@ namespace _Project.Scripts.Core.Models
 
         private void CheckLine(GameCircle a, GameCircle b, GameCircle c)
         {
-            if (a == b && b == c)
+            if (a != null && b != null && c != null && a.ID == b.ID && b.ID == c.ID)
             {
                 a.DestroyIt();
                 b.DestroyIt();

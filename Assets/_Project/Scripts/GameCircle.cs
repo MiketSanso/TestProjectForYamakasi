@@ -10,6 +10,8 @@ namespace _Project.Scripts
         private CirclesModel _circlesModel;
         private ParticleController _particleController;
         
+        [field: SerializeField] public int ID { get; private set; }
+        
         [Inject]
         public void Initialize(ParticleController particleController,
             CirclesModel circlesModel)
